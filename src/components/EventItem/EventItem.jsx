@@ -4,7 +4,7 @@ import './styles.css';
 
 const EventItem = (props) => {
   return (
-    <Link to={`/item/${props.id}`} className='eventItem'>
+    <Link to={`/event/${props.id}`} className='eventItem'>
       <li>
         <h3 className='title'>{props.title}</h3>
         <span className='date'>{props.date}</span>

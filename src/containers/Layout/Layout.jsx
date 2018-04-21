@@ -5,31 +5,42 @@ import './styles.css';
 class Layout extends Component {
   constructor(props) {
     super(props);
-
     this.getRouteName = this.getRouteName.bind(this);
   };
 
   getRouteName() {
-    var route = this.props.children.props.children.find((route) => {
-      return route.props.path === this.props.location.pathname;
+    
+    var route = this.props.routes.find(route => {
+      if (route.path.startsWith(this.props.location.pathname)) {
+        return route;
+      }
     });
-    return route.props.name;
+    if (route)
+      return route.name;
+    else
+      return 'Event';  
   };
 
   render() {
+    var routeName = this.getRouteName();
+
     return (
       <div className="layout">
         <div className="navbar_top">
-          <div>Back</div>
-          <div className="logo">YouTS</div>
-          <div className="currentPage">{this.getRouteName()}</div>
+          <div
+            className={`${routeName === "Discovery" || routeName === "My List" ? "hidden" : ""}`}
+            onClick={() => this.props.history.goBack()}>
+            Back
+          </div>
+          <div className="logo">U(YOU)TS</div>
+          <div className="currentPage">{routeName}</div>
         </div>
 
         {this.props.children}
         
         <div className="navbar_bottom">
-          <Link to="/discovery" className="">Discover</Link>
-          <Link to="/my-list" className="active">My List</Link>
+          <Link to="/discovery" className={`${routeName === "Discovery" ? "active" : ""}`}>Discover</Link>
+          <Link to="/my-list" className={`${routeName === "My List" ? "active" : ""}`}>My List</Link>
         </div>
       </div>
     );
