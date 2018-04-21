@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import './styles.css';
 
 class Layout extends Component {
@@ -10,10 +11,12 @@ class Layout extends Component {
           <div className="logo">yoUTS</div>
           <div className="currentPage">My List</div>
         </div>
+
         {this.props.children}
+        
         <div className="navbar_bottom">
-          <div className="">Discover</div>
-          <div className="active">My List</div>
+          <Link to="/discovery" className="">Discover</Link>
+          <Link to="/my-list" className="active">My List</Link>
         </div>
       </div>
     );
