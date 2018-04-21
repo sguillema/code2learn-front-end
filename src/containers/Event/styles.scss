@@ -1,0 +1,37 @@
+@import 'styles/global.scss';
+
+.eventContainer{
+	.event{
+		.eventImage{
+			min-height: 150px;
+			height: 15vh;
+			background-color: white;
+		}
+		.eventContent{
+			padding: 0 20px;
+		}
+		.title{
+			margin: 0;
+			margin-top: 20px;
+			font-weight: 400;
+			font-size: 1.6rem;
+		}
+		.date{
+			margin: 0;
+			font-size: 0.8rem;
+			font-weight: 400;
+		}
+		.host{
+			margin: 0;
+			margin-top: 15px;
+			margin-bottom: 30px;
+			font-size: 0.8rem;
+			font-weight: 400;
+			font-style: italic;
+		}
+		.description *{
+			font-size: 1rem;
+			font-weight: 300;
+		}
+	}
+}

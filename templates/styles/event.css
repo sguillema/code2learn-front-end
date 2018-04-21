@@ -111,26 +111,26 @@
 
 /***********************************
 ***********************************/
-.eventContainer .eventImage {
+.event .eventImage {
   min-height: 150px;
   height: 15vh;
   background-color: white; }
 
-.eventContainer .eventContent {
+.event .eventContent {
   padding: 0 20px; }
 
-.eventContainer .title {
+.event .title {
   margin: 0;
   margin-top: 20px;
   font-weight: 400;
   font-size: 1.6rem; }
 
-.eventContainer .date {
+.event .date {
   margin: 0;
   font-size: 0.8rem;
   font-weight: 400; }
 
-.eventContainer .host {
+.event .host {
   margin: 0;
   margin-top: 15px;
   margin-bottom: 30px;
@@ -138,6 +138,6 @@
   font-weight: 400;
   font-style: italic; }
 
-.eventContainer .description * {
+.event .description * {
   font-size: 1rem;
   font-weight: 300; }
