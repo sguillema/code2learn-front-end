@@ -3,62 +3,6 @@
 .eventCardContainer{
 	padding: 20px 20px 0px 20px;
 	height: calc(100% - 120px);
-	.eventCard{
-		background-color: white;
-		border-radius: 20px;
-		height: 100%;
-		padding: 20px;
-		position: relative;
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		box-sizing: border-box;
-		*{
-			color: #fff;
-		}
-		&::before{
-			content: '';
-			display: block;
-			background: linear-gradient(to bottom, rgba(229,229,229,0) 0%,rgba(0,0,0,0.8) 100%);
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			height: 35%;
-			width: 100%;
-		}
-		.title{
-			margin: 0;
-			z-index: 1;
-		}
-		.date{
-			margin: 0;
-			// margin-top: 0px;
-			font-size: 0.8rem;
-			font-weight: 400;
-			z-index: 1;
-		}
-		.host{
-			margin: 0;
-			margin-top: 15px;
-			font-size: 0.8rem;
-			font-weight: 400;
-			font-style: italic;
-			z-index: 1;
-		}
-		.info{
-			margin: 0;
-			z-index: 1;
-			position: absolute;
-			right: 20px;
-			border: 2px solid #fff;
-			width: 20px;
-			height: 20px;
-			border-radius: 50%;
-			display: flex;
-			justify-content: center;
-		}
-	}
 }
 
 .eventCardControls{
@@ -87,4 +31,68 @@
 		align-items: center;
 		justify-content: center;
 	}
+}
+
+
+
+.master-root {
+	margin: 0px auto;
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.card {
+	background-size: cover;
+	position: absolute;
+	margin: 0 auto;
+	transition: box-shadow .3s;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+	border-radius: 20px;
+}
+
+.animate {
+	transition: transform .3s;
+	box-shadow: none;
+	border-radius: 20px;
+}
+
+.inactive {
+	box-shadow: none;
+	border-radius: 20px;
+}
+
+.alert {
+	width: 45%;
+	min-height: 10%;
+	position: absolute;
+	z-index: 9999;
+	opacity: 0;
+	transition: opacity .5s;
+	color: white;
+	vertical-align: middle;
+	line-height: 3rem;
+}
+
+.alert-visible {
+	opacity: 1;
+}
+
+.alert-right {
+	top: 0;
+	right: 0;
+	background: green;
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+}
+
+.alert-left {
+	top: 0;
+	left: 0;
+	background: red;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
 }
