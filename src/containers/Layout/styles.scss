@@ -1,12 +1,52 @@
 @import 'styles/global.scss';
 
 .layout {
-  background-color: #0D0C36;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: $darkblue;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.navbar_top {
+  display: flex;
+  flex-direction: row;
+  background-color: $greyblue;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 50px;
+  * {
+    @include ui;
+  }
+}
+
+.body {
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar_bottom {
+  display: flex;
+  flex-direction: row;
+  background-color: $greyblue;
+  justify-content: space-around;
+  align-items: center; // padding: 0 20px;
+  height: 50px;
+  margin-top: auto;
+  * {
+    @include ui;
+  }
+  >div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+  }
+  .active {
+    background-color: $highlightblue;
+    font-weight: 400;
+  }
 }

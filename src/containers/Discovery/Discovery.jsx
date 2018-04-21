@@ -10,7 +10,7 @@ class Discovery extends Component {
 
   render() {
     return ( 
-      <div id="discovery-container">
+      <div className="discovery body">
         Discovery Container
       </div>
     );

@@ -1,30 +1,20 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import './styles.css';
 
 class Layout extends Component {
   render() {
     return (
       <div className="layout">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/discovery">Discovery</Link>
-          </li>
-          <li>
-            <Link to="/my-list">MyList</Link>
-          </li>
-          <li>
-            <Link to="item/109231283">Some Item</Link>
-          </li>
-        </ul>
-
-        <hr />
-
+        <div className="navbar_top">
+          <div>Back</div>
+          <div className="logo">yoUTS</div>
+          <div className="currentPage">My List</div>
+        </div>
         {this.props.children}
-
+        <div className="navbar_bottom">
+          <div className="">Discover</div>
+          <div className="active">My List</div>
+        </div>
       </div>
     );
   }

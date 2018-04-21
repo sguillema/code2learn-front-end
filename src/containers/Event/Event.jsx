@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Item extends Component {
+class Event extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,11 +10,11 @@ class Item extends Component {
 
   render() {
     return (
-      <div id="item-container">
-        Item Container
+      <div className="eventContainer body">
+        Event Container
       </div>
     );
   }
 }
 
-export default Item;
+export default Event;

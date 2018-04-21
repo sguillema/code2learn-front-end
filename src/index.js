@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './styles/global.css';
-import { Discovery, Home, Layout, MyList, Item } from './containers';
+import { Discovery, Home, Layout, MyList, Event } from './containers';
 
 const router = (
   <Router>
@@ -10,7 +10,7 @@ const router = (
       <Route exact path="/" component={Home} />
       <Route path="/discovery" component={Discovery} />
       <Route path="/my-list" component={MyList} />
-      <Route path="/item/:itemId" component={Item} />
+      <Route path="/event/:eventId" component={Event} />
     </Layout>
   </Router>
 )
