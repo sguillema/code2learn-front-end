@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { EventItem } from '../../components';
 import moment from 'moment';
+import globals from '../../config/globals'
 import './styles.css';
 
 var upcomingEvents;
@@ -20,11 +21,10 @@ class MyList extends Component {
   };
 
   componentDidMount() {
-    var api = "https://maxn9yb5ia.execute-api.ap-southeast-2.amazonaws.com/api";
     axios({
       method: 'post',
-      url: api + "/person/events/get",
-      data: { _id: "f41bd45f-59df-4383-a5ff-8c2151d37eec" } 
+      url: globals.api + "/person/events/get",
+      data: { _id: globals.userId } 
     })
     .then(res => {
       var now = moment();
