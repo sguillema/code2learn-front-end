@@ -1,0 +1,235 @@
+@font-face {
+  src: '../assets/Roboto-Regular.ttf';
+  font-family: 'Roboto';
+  font-weight: 400; }
+
+@font-face {
+  src: '../assets/Roboto-Bold.ttf';
+  font-family: 'Roboto';
+  font-weight: bold; }
+
+@font-face {
+  src: '../assets/Roboto-Light.ttf';
+  font-family: 'Roboto';
+  font-weight: 300; }
+
+* {
+  font-size: 16px;
+  color: #DDDDF5;
+  font-family: "Roboto"; }
+
+.layout {
+  background-color: #0D0C36;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.navbar_top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #201F3F;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 40px;
+  height: 50px; }
+  .navbar_top * {
+    font-size: 0.8rem; }
+
+.body {
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.navbar_bottom {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #201F3F;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50px;
+  margin-top: auto; }
+  .navbar_bottom * {
+    font-size: 0.8rem; }
+  .navbar_bottom > div {
+    width: 50%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-weight: 300; }
+  .navbar_bottom .active {
+    background-color: #302F51;
+    font-weight: 400; }
+
+/***********************************
+***********************************/
+.eventCardContainer {
+  padding: 20px 20px 0px 20px;
+  height: calc(100% - 120px); }
+  .eventCardContainer .eventCard {
+    background-color: white;
+    border-radius: 20px;
+    height: 100%;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .eventCardContainer .eventCard * {
+      color: #fff; }
+    .eventCardContainer .eventCard::before {
+      content: '';
+      display: block;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(229, 229, 229, 0)), to(rgba(0, 0, 0, 0.8)));
+      background: -webkit-linear-gradient(top, rgba(229, 229, 229, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+      background: -o-linear-gradient(top, rgba(229, 229, 229, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+      background: linear-gradient(to bottom, rgba(229, 229, 229, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 35%;
+      width: 100%; }
+    .eventCardContainer .eventCard .title {
+      margin: 0;
+      z-index: 1; }
+    .eventCardContainer .eventCard .date {
+      margin: 0;
+      font-size: 0.8rem;
+      font-weight: 400;
+      z-index: 1; }
+    .eventCardContainer .eventCard .host {
+      margin: 0;
+      margin-top: 15px;
+      font-size: 0.8rem;
+      font-weight: 400;
+      font-style: italic;
+      z-index: 1; }
+    .eventCardContainer .eventCard .info {
+      margin: 0;
+      z-index: 1;
+      position: absolute;
+      right: 20px;
+      border: 2px solid #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+
+.eventCardControls {
+  height: 100px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  margin-top: auto; }
+  .eventCardControls .button_remove {
+    border-radius: 50%;
+    background-color: #302F51;
+    color: #DDDDF5;
+    height: 60px;
+    width: 60px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .eventCardControls .button_add {
+    border-radius: 50%;
+    background-color: #302F51;
+    color: #FF2626;
+    height: 60px;
+    width: 60px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
