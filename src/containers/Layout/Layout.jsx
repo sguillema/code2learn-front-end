@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import './styles.css';
 
 class Layout extends Component {
   render() {
     return (
-      <div>
+      <div className="layout">
         <ul>
           <li>
             <Link to="/">Home</Link>
