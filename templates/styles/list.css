@@ -51,6 +51,8 @@
   align-items: center;
   padding: 0 40px;
   height: 50px; }
+  .navbar_top * {
+    font-size: 0.8rem; }
 
 .body {
   height: calc(100vh - 100px);
@@ -83,9 +85,29 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0 20px;
   height: 50px;
   margin-top: auto; }
+  .navbar_bottom * {
+    font-size: 0.8rem; }
+  .navbar_bottom > div {
+    width: 50%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-weight: 300; }
+  .navbar_bottom .active {
+    background-color: #302F51;
+    font-weight: 400; }
 
 .tabsContainer {
   height: 50px;
@@ -102,6 +124,8 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center; }
+  .tabsContainer * {
+    font-size: 0.8rem; }
   .tabsContainer .tabs {
     padding-left: 0;
     list-style: none;

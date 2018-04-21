@@ -14,6 +14,9 @@
 	align-items: center;
 	padding: 0 40px;
 	height: 50px;
+	*{
+		@include ui;
+	}
 }
 .body{
 	height: calc(100vh - 100px);
@@ -27,9 +30,24 @@
 	background-color: $greyblue;
 	justify-content: space-around;
 	align-items: center;
-	padding: 0 20px;
+	// padding: 0 20px;
 	height: 50px;
 	margin-top: auto;
+	*{
+		@include ui;
+	}
+	>div{
+		width: 50%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 300;
+	}
+	.active{
+		background-color: $highlightblue;
+		font-weight: 400;
+	}
 }
 
 .tabsContainer{
@@ -37,6 +55,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	*{
+		@include ui;
+	}
 	.tabs{
 		padding-left: 0;
 		list-style: none;
