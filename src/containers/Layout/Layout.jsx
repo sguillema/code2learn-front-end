@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link, withRouter} from "react-router-dom";
 import './styles.css';
 
 class Layout extends Component {
+  constructor(props) {
+    super(props);
+
+    this.getRouteName = this.getRouteName.bind(this);
+  };
+
+  getRouteName() {
+    var route = this.props.children.props.children.find((route) => {
+      return route.props.path === this.props.location.pathname;
+    });
+    return route.props.name;
+  };
+
   render() {
     return (
       <div className="layout">
         <div className="navbar_top">
           <div>Back</div>
-          <div className="logo">yoUTS</div>
-          <div className="currentPage">My List</div>
+          <div className="logo">YouTS</div>
+          <div className="currentPage">{this.getRouteName()}</div>
         </div>
 
         {this.props.children}
@@ -23,6 +36,6 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+export default withRouter(Layout);
 
 
