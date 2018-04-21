@@ -22,6 +22,14 @@
     left: 20px;
     top: calc(35% / 2);
   }
+  .fa-icon{
+    // content: '>';
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 10px);
+    height: 10px;
+  }
   &+.eventItem {
     margin-top: 20px;
   }
