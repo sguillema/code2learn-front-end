@@ -19,7 +19,7 @@ class MyList extends Component {
     this.renderEvents = this.renderEvents.bind(this);
   };
 
-  componentWillMount() {
+  componentDidMount() {
     var api = "https://maxn9yb5ia.execute-api.ap-southeast-2.amazonaws.com/api";
     axios({
       method: 'post',

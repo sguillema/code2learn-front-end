@@ -4,6 +4,7 @@ import './styles.css';
 class Event extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
 
     };

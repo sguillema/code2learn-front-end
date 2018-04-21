@@ -9,11 +9,9 @@ class Layout extends Component {
   };
 
   getRouteName() {
-    var route = this.props.routes.find(route => {
-      if (route.path.startsWith(this.props.location.pathname)) {
-        return route;
-      }
-    });
+    var route = this.props.routes.find(route => (
+      route.path.startsWith(this.props.location.pathname)
+    ));
     if (route)
       return route.name;
     else
