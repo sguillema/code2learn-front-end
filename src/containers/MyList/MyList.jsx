@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { EventItem } from '../../components';
 import moment from 'moment';
-import globals from '../../config/globals'
+import globals from '../../config/globals';
 import './styles.css';
 
 var upcomingEvents;

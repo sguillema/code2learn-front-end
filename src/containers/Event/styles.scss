@@ -4,7 +4,9 @@
 	.event{
 		.eventImage{
 			min-height: 150px;
-			height: 15vh;
+			width: 100%;
+			height: auto;
+			display: flex;
 			background-color: white;
 		}
 		.eventContent{
@@ -32,6 +34,11 @@
 		.description *{
 			font-size: 1rem;
 			font-weight: 300;
+		}
+		a {
+			text-decoration: underline;
+			word-wrap: break-word;
+			color: $lightblue;
 		}
 	}
 }

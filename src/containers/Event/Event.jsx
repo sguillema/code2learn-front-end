@@ -12,6 +12,7 @@ class Event extends Component {
       event: {},
       loading: true
     };
+    this.renderUrl = this.renderUrl.bind(this);
   }
 
   componentDidMount() {
@@ -27,11 +28,17 @@ class Event extends Component {
     })
   }
 
+  renderUrl(url) {
+    if (url) { return <p><a href={url}>{url}</a></p> }
+    else { return ''; }
+  }
+
   render() {
     if (this.state.loading) {
       return <div className="evenContainer body"></div>
     }
     var event = this.state.event;
+    console.log(event);
     return (
       <div className="eventContainer body">
         <div className="event">
@@ -42,7 +49,7 @@ class Event extends Component {
             <h2 className="host">{event.host}</h2>
             <div className="description">
               <p>{event.description}</p>
-              <p>www.example.com</p>
+              {this.renderUrl(event.url)}
             </div>
           </div>
         </div>
