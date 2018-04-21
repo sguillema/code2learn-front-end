@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter} from "react-router-dom";
+import FontAwesome from "react-fontawesome";
 import './styles.css';
 
 class Layout extends Component {
@@ -27,7 +28,7 @@ class Layout extends Component {
           <div
             className={`${routeName === "Discovery" || routeName === "My List" ? "hidden" : ""}`}
             onClick={() => this.props.history.goBack()}>
-            {'< '}Back
+            <FontAwesome name='arrow-left' size='2x' style={{marginRight: '10px'}}/>Back
           </div>
           <div className="logo">U(YOU)TS</div>
           <div className="currentPage">{routeName}</div>
@@ -36,9 +37,9 @@ class Layout extends Component {
         {this.props.children}
         
         <div className="navbar_bottom">
-          <Link to="/discovery" className={`${routeName === "Discovery" ? "active" : ""}`}>Discover</Link>
-          <Link to="/groups" className={`${routeName === "Groups" ? "active" : ""}`}>Groups</Link>
-          <Link to="/my-list" className={`${routeName === "My List" ? "active" : ""}`}>My List</Link>
+          <Link to="/discovery" className={`${routeName === "Discovery" ? "active" : ""}`}><FontAwesome name='safari' size='2x' style={{marginBottom: '5px'}}/>Discover</Link>
+          <Link to="/groups" className={`${routeName === "Groups" ? "active" : ""}`}><FontAwesome name='users' size='2x' style={{marginBottom: '5px'}}/>Groups</Link>
+          <Link to="/my-list" className={`${routeName === "My List" ? "active" : ""}`}><FontAwesome name='heart' size='2x' style={{marginBottom: '5px'}}/>My List</Link>
         </div>
       </div>
     );
