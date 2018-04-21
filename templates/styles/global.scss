@@ -1,10 +1,27 @@
+@font-face {
+	src: '../assets/Roboto-Regular.ttf';
+	font-family: 'Roboto';
+	font-weight: 400;
+}
+@font-face {
+	src: '../assets/Roboto-Bold.ttf';
+	font-family: 'Roboto';
+	font-weight: bold;
+}
+@font-face {
+	src: '../assets/Roboto-Light.ttf';
+	font-family: 'Roboto';
+	font-weight: 300;
+}
+
 $blue:#1D2052;
 $greyblue:#201F3F;
 $darkblue:#0D0C36;
 $yellow:#FFFF0E;
-$white:#fff;
+$white:#DDDDF5;
 
 *{
 	font-size: 16px;
 	color: $white;
+	font-family: "Roboto";
 }
