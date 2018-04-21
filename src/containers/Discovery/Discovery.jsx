@@ -42,13 +42,6 @@ class Discovery extends Component {
 
 export default Discovery;
 
-{/* <EventCard
-  id={1}
-  name="Event Name"
-  date="dd/mm/yy - hh:mm"
-  host="UTS MonkaS"
-/> */}
-
 const suggestedEvents = [
   {
     id: 1,

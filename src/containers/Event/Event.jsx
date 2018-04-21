@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import moment from 'moment';
+import globals from '../../config/globals'
 import './styles.css';
 
 class Event extends Component {
@@ -6,21 +9,39 @@ class Event extends Component {
     super(props);
     console.log(this.props);
     this.state = {
-
+      event: {},
+      loading: true
     };
   }
 
+  componentDidMount() {
+    axios({
+      method: 'get',
+      url: globals.api + "/event/get/" + this.props.match.params.eventId
+    })
+    .then(res => {
+      this.setState({
+        event: res.data,
+        loading: false
+      })
+    })
+  }
+
   render() {
+    if (this.state.loading) {
+      return <div className="evenContainer body"></div>
+    }
+    var event = this.state.event;
     return (
       <div className="eventContainer body">
         <div className="event">
-          <div className="eventImage"></div>
+          <img className="eventImage" src={event.image} alt={event.title}></img>
           <div className="eventContent">
-            <h1 className="title">Event Name</h1>
-            <h2 className="date">dd/mm/yy - hh:mm</h2>
-            <h2 className="host">UTS MonkaS</h2>
+            <h1 className="title">{event.title}</h1>
+            <h2 className="date">{moment(event.date_start).format('DD/MM/YY - hh:mmA')}</h2>
+            <h2 className="host">{event.host}</h2>
             <div className="description">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique, nunc sed scelerisque volutpat, felis neque luctus nunc, ac tempus diam nisi aliquet metus. Etiam maximus molestie ex non maximus. Curabitur elementum porta libero in bibendum. Ut vestibulum eu arcu ac aliquam. Duis quis tortor justo. Quisque dictum nulla a quam scelerisque, eget semper tortor </p>
+              <p>{event.description}</p>
               <p>www.example.com</p>
             </div>
           </div>
