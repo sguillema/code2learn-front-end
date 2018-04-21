@@ -1,4 +1,5 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+# we're using scss files, so all preprocessed css files should be ignored
+src/**/*.css
 
 # dependencies
 /node_modules
