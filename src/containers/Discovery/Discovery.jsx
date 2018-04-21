@@ -45,7 +45,22 @@ class Discovery extends Component {
             <Card
               key={i}
               onSwipeLeft={() => console.log('swipe left')}
-              onSwipeRight={() => console.log('swipe right')}>
+              onSwipeRight={() => {
+                console.log('swipe right')
+                axios({
+                  method: 'post',
+                  url: globals.api + "/person/events/save",
+                  data: 
+                  { _id: globals.userId,
+                    event: {
+                      "event-id": event._id
+                    } 
+                  }
+                })
+                .then(res => {
+                  console.log("Successfully added item")
+                })
+              }}>
               <EventCard
                 id={event._id}
                 title={event.title}
@@ -72,10 +87,10 @@ class Discovery extends Component {
         <div className="eventCardContainer">
           {this.renderEventCards()}
         </div>
-        <div className="eventCardControls">
+        {/* <div className="eventCardControls">
           <div className="button_remove">:(</div>
           <div className="button_add">{'<3'}</div>
-        </div>
+        </div> */}
       </div>
     );
   }

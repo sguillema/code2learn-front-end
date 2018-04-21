@@ -27,7 +27,7 @@ class Layout extends Component {
           <div
             className={`${routeName === "Discovery" || routeName === "My List" ? "hidden" : ""}`}
             onClick={() => this.props.history.goBack()}>
-            Back
+            {'< '}Back
           </div>
           <div className="logo">U(YOU)TS</div>
           <div className="currentPage">{routeName}</div>
@@ -37,6 +37,7 @@ class Layout extends Component {
         
         <div className="navbar_bottom">
           <Link to="/discovery" className={`${routeName === "Discovery" ? "active" : ""}`}>Discover</Link>
+          <Link to="/groups" className={`${routeName === "Groups" ? "active" : ""}`}>Groups</Link>
           <Link to="/my-list" className={`${routeName === "My List" ? "active" : ""}`}>My List</Link>
         </div>
       </div>
