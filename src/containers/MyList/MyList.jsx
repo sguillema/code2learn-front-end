@@ -6,46 +6,44 @@ class MyList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: [
-        {
-          id: 1,
-          title: "Event Name",
-          date: "dd/MM/yy - hh:mm",
-          host: "UTS MonkaS"
-        },
-        {
-          id: 2,
-          title: "Event Name",
-          date: "dd/MM/yy - hh:mm",
-          host: "UTS MonkaS"
-        },
-        {
-          id: 3,
-          title: "Event Name",
-          date: "dd/MM/yy - hh:mm",
-          host: "UTS MonkaS"
-        },
-        {
-          id: 4,
-          title: "Event Name",
-          date: "dd/MM/yy - hh:mm",
-          host: "UTS MonkaS"
-        }
-      ],
+      activeTab: "upcoming",
+      events: upcomingEvents
     };
-  }
+    this.updateTab = this.updateTab.bind(this);
+  };
+
+  updateTab(tab) {
+    var updatedEvents;
+    if (tab === "upcoming") {
+      // Get upcoming events 
+      updatedEvents = upcomingEvents;
+    } 
+    else if (tab === "past") {
+      // Get past events
+      updatedEvents = pastEvents;
+    }
+
+    this.setState({
+      activeTab: tab,
+      events: updatedEvents
+    })
+  };
 
   render() {
     return (
       <div className="myList body">
         <div className="tabsContainer">
           <ul className="tabs">
-            <li className="tab active">
+            <li
+              className={`tab ${this.state.activeTab === "upcoming" ? "active" : ""}`}
+              onClick={() => this.updateTab("upcoming")}>
               Upcoming
-					</li>
-            <li className="tab">
+            </li>
+            <li
+              className={`tab ${this.state.activeTab === "past" ? "active" : ""}`}
+              onClick={() => this.updateTab("past")}>
               Past
-					</li>
+            </li>
           </ul>
         </div>
         <div className="tabContent">
@@ -67,3 +65,58 @@ class MyList extends Component {
 }
 
 export default MyList;
+
+
+const upcomingEvents = [
+  {
+    id: 1,
+    title: "Event Name",
+    date: "dd/MM/yy - hh:mm",
+    host: "UTS MonkaS"
+  },
+  {
+    id: 2,
+    title: "Event Name",
+    date: "dd/MM/yy - hh:mm",
+    host: "UTS MonkaS"
+  },
+  {
+    id: 3,
+    title: "Event Name",
+    date: "dd/MM/yy - hh:mm",
+    host: "UTS MonkaS"
+  },
+  {
+    id: 4,
+    title: "Event Name",
+    date: "dd/MM/yy - hh:mm",
+    host: "UTS MonkaS"
+  },
+  {
+    id: 5,
+    title: "Event Name",
+    date: "dd/MM/yy - hh:mm",
+    host: "UTS MonkaS"
+  },
+  {
+    id: 6,
+    title: "Event Name",
+    date: "dd/MM/yy - hh:mm",
+    host: "UTS MonkaS"
+  }
+];
+
+const pastEvents = [
+  {
+    id: 1,
+    title: "Event Name",
+    date: "dd/MM/yy - hh:mm",
+    host: "UTS MonkaS"
+  },
+  {
+    id: 2,
+    title: "Event Name",
+    date: "dd/MM/yy - hh:mm",
+    host: "UTS MonkaS"
+  },
+];
