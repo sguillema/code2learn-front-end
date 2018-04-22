@@ -30,8 +30,8 @@ class Layout extends Component {
             onClick={() => this.props.history.goBack()}>
             <FontAwesome name='arrow-left' size='2x' style={{marginRight: '10px'}}/>Back
           </div>
-          <div className="logo">U(YOU)TS</div>
           <div className="currentPage">{routeName}</div>
+          <div className="logo"></div>
         </div>
 
         {this.props.children}
