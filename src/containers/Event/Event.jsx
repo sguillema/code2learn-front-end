@@ -38,6 +38,7 @@ class Event extends Component {
       return <div className="evenContainer body"></div>
     }
     var event = this.state.event;
+    console.log(event);
     return (
       <div className="eventContainer body">
         <div className="event">
@@ -46,6 +47,7 @@ class Event extends Component {
             <h1 className="title">{event.title}</h1>
             <h2 className="date">{moment(event.date_start).format('DD/MM/YY - hh:mmA')}</h2>
             <h2 className="host">{event.host}</h2>
+            <h2 className="location">{event.location}</h2>
             <div className="description">
               <p>{event.description}</p>
               {this.renderUrl(event.url)}

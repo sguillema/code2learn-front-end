@@ -13,7 +13,6 @@ class Layout extends Component {
 
   getRouteName() {
     var pathname = this.props.location.pathname;
-    console.log(pathname);
     if (pathname === "/")
       return "Home";  
     
