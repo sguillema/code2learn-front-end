@@ -15,12 +15,32 @@
       display: flex;
       justify-content: center;
       margin: 0;
+      height: 30px;
       .tab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         min-width: 150px;
         text-align: center;
+        position: relative;
+        &::after{
+          content: '';
+          width: 0%;
+          height: 2px;
+          background: $lightblue;
+          position: absolute;
+          bottom: 0;
+          opacity: 0;
+          transition: 0.3s;
+          transition-timing-function: ease-out;
+        }
       }
       .active {
-        background: $lightblue;
+        &::after{
+          opacity: 1;
+          width: 70%;
+          margin-top: 10px;
+        }
       }
     }
   }
