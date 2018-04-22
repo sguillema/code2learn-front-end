@@ -6,33 +6,28 @@ import { Discovery, Home, Layout, MyList, Event, GroupList, Group } from './cont
 
 const routes = [
   {
-    name: "Home",
-    path: "/",
-    component: Home
-  },
-  {
     name: "Discovery",
-    path: "/discovery",
+    pathNoParams: "/discovery",
     component: Discovery
   },
   {
     name: "My List",
-    path: "/my-list",
+    pathNoParams: "/my-list",
     component: MyList
   },
   {
     name: "Event",
-    path: "/event/:eventId",
+    pathNoParams: "/event",
     component: Event
   },
   {
     name: "Groups",
-    path: "/groups",
+    pathNoParams: "/groups",
     component: GroupList
   },
   {
     name: "Group",
-    path: "/group/:eventId",
+    pathNoParams: "/group",
     component: Group
   },
 ];
