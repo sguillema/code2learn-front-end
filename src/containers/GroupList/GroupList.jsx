@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import moment from 'moment';
 import { GroupItem } from '../../components';
 import globals from '../../config/globals'
 import './styles.css';
@@ -32,7 +31,6 @@ class GroupList extends Component {
 
   renderGroupsList() {
     var groups = this.state.groups;
-    console.log(groups);
     if (groups.length > 0) {
       return groups.map((group, i) => (
         <GroupItem
