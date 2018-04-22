@@ -1,0 +1,93 @@
+@import 'styles/global.scss';
+
+.groupContainer {
+  .event {
+    background-color: white;
+    height: 100%;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    * {
+      color: #fff;
+    }
+    &::before {
+      content: '';
+      display: block;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+    .title {
+      margin: 0;
+      z-index: 1;
+    }
+    .date {
+      margin: 0; // margin-top: 0px;
+      font-size: 0.8rem;
+      font-weight: 400;
+      z-index: 1;
+    }
+    .host {
+      margin: 0;
+      margin-top: 15px;
+      font-size: 0.8rem;
+      font-weight: 400;
+      font-style: italic;
+      z-index: 1;
+    }
+    .info {
+      margin: 0;
+      z-index: 1;
+      position: absolute;
+      right: 20px;
+      border: 2px solid #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      a {
+        padding: 2px 7px 0;
+      }
+    }
+  }
+  .groupCount {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    * {
+      font-weight: bold;
+      color: $highlightblue;
+    }
+  }
+  .groupMembers {
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+    padding-left: 0;
+    margin-top: 0;
+    list-style: none;
+    padding: 0px 40px;
+    .groupMember {
+      margin-top: 0;
+      padding: 20px 5px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      span:nth-child(1) {
+        margin-bottom: 10px;
+      }
+      * {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

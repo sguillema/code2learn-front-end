@@ -25,7 +25,7 @@ class Layout extends Component {
       <div className="layout">
         <div className="navbar_top">
           <div
-            className={`${routeName === "Discovery" || routeName === "My List" ? "hidden" : ""}`}
+            className={`${routeName === "Discovery" || routeName === "My List" || routeName === "Home" ? "hidden" : ""}`}
             onClick={() => this.props.history.goBack()}>
             {'< '}Back
           </div>

@@ -7,7 +7,6 @@ import './styles.css';
 class Event extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       event: {},
       loading: true
@@ -26,6 +25,7 @@ class Event extends Component {
         loading: false
       })
     })
+    .catch(err => { console.log(err) });
   }
 
   renderUrl(url) {
@@ -38,7 +38,6 @@ class Event extends Component {
       return <div className="evenContainer body"></div>
     }
     var event = this.state.event;
-    console.log(event);
     return (
       <div className="eventContainer body">
         <div className="event">
