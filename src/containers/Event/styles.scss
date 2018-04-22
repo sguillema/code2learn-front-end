@@ -2,6 +2,7 @@
 
 .eventContainer{
 	.event{
+		position: relative;
 		.eventImage{
 			min-height: 150px;
 			width: 100%;
@@ -9,8 +10,31 @@
 			display: flex;
 			background-color: white;
 		}
+		.lfg_button{
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			background: $green;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			margin-top: -25px;
+			right: 20px;
+			transition: 0.2s;
+			&.inactive{
+				transform: scale(0);
+				transition-timing-function: ease-out;
+				animation: disappear 0.4s;
+			}
+			@keyframes disappear {
+				99% {display: flex}
+				100% {display: none}
+				
+			}
+		}
 		.eventContent{
-			padding: 0 20px;
+			padding: 0 40px;
 		}
 		.title{
 			margin: 0;

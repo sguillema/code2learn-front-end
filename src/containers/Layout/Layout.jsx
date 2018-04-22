@@ -37,9 +37,9 @@ class Layout extends Component {
         {this.props.children}
         
         <div className="navbar_bottom">
-          <Link to="/discovery" className={`${routeName === "Discovery" ? "active" : ""}`}><FontAwesome name='safari' size='2x' style={{marginBottom: '5px'}}/>Discover</Link>
-          <Link to="/groups" className={`${routeName === "Groups" ? "active" : ""}`}><FontAwesome name='users' size='2x' style={{marginBottom: '5px'}}/>Groups</Link>
-          <Link to="/my-list" className={`${routeName === "My List" ? "active" : ""}`}><FontAwesome name='heart' size='2x' style={{marginBottom: '5px'}}/>My List</Link>
+          <Link to="/discovery" className={`${routeName === "Discovery" ? "active" : ""}`}><FontAwesome name='safari' size='2x' className="discovery" style={{marginBottom: '5px'}}/>Discover</Link>
+          <Link to="/groups" className={`${routeName === "Groups" ? "active" : ""}`}><FontAwesome name='users' size='2x' className="groups" style={{marginBottom: '5px'}}/>Groups</Link>
+          <Link to="/my-list" className={`${routeName === "My List" ? "active" : ""}`}><FontAwesome name='heart' size='2x' className="myList" style={{marginBottom: '5px'}}/>My List</Link>
         </div>
       </div>
     );
