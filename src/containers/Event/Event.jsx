@@ -9,7 +9,6 @@ import './styles.css';
 class Event extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       event: {},
       loading: true,
@@ -69,6 +68,7 @@ class Event extends Component {
     .then(res => {
       console.log("Successfully added to LFG queue!")
     })
+    .catch(err => { console.log(err) });
     ReactDOM.findDOMNode(this.refs.lfg).classList.add("inactive")
   }
 
@@ -95,6 +95,7 @@ class Event extends Component {
             <h1 className="title">{event.title}</h1>
             <h2 className="date">{moment(event.date_start).format('DD/MM/YY - hh:mmA')}</h2>
             <h2 className="host">{event.host}</h2>
+            <h2 className="location">{event.location}</h2>
             <div className="description">
               <p>{event.description}</p>
               {this.renderUrl(event.url)}

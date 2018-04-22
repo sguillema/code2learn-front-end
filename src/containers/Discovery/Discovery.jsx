@@ -97,24 +97,3 @@ class Discovery extends Component {
 }
 
 export default Discovery;
-
-const suggestedEvents = [
-  {
-    id: 1,
-    title: "Event Name",
-    date: "dd/MM/yy - hh:mm",
-    host: "UTS MonkaS"
-  },
-  {
-    id: 2,
-    title: "Event Name",
-    date: "dd/MM/yy - hh:mm",
-    host: "UTS MonkaS"
-  },
-  {
-    id: 3,
-    title: "Event Name",
-    date: "dd/MM/yy - hh:mm",
-    host: "UTS MonkaS"
-  },
-];

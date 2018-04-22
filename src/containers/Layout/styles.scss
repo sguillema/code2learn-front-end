@@ -53,13 +53,13 @@
     flex-direction: column;
     font-weight: 300;
     &.active{
-      .discovery{
+      .discoveryicon{
         color: $orange;
       }
-      .groups{
+      .groupsicon{
         color: $yellow;
       }
-      .myList{
+      .myListicon{
         color: $red;
       }
     }
