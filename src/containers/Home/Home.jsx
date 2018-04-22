@@ -11,7 +11,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home body">
-        Home Container
+        {window.location.replace('/discovery')}
       </div>
     );
   }
