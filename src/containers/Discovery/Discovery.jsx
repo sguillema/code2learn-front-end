@@ -7,93 +7,94 @@ import './styles.css';
 
 
 class Discovery extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true,
-      events: []
-    };
-    this.renderEventCards = this.renderEventCards.bind(this);
-    this.getEmptyResultResponse = this.getEmptyResultResponse.bind(this);
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			loading: true,
+			events: []
+		};
+		this.renderEventCards = this.renderEventCards.bind(this);
+		this.getEmptyResultResponse = this.getEmptyResultResponse.bind(this);
+	}
 
-  componentDidMount() {
-    axios({
-      method: 'post',
-      url: globals.api + "/event/list",
-      data: { _id: globals.userId }
-    })
-    .then(res => {
-      this.setState({
-        loading: false,
-        events: res.data
-      })
-    })
-    .catch(err => { console.log(err) });
-  }
-  
-  getEmptyResultResponse() {
-    return <div>No more discoveries to be made at this time :(</div>
-  }
+	componentDidMount() {
+		axios({
+			method: 'post',
+			url: globals.api + "/event/list",
+			data: { _id: globals.userId }
+		})
+			.then(res => {
+				this.setState({
+					loading: false,
+					events: res.data
+				})
+			})
+			.catch(err => { console.log(err); });
+	}
 
-  renderEventCards() {
-    var events = this.state.events;
-    if (events.length > 0) {
-      return (
-        <Cards onEnd={() => (this.getEmptyResultResponse())} className="master-root">
-          {this.state.events.map((event, i) => (
-            <Card
-              key={i}
-              onSwipeLeft={() => console.log('swipe left')}
-              onSwipeRight={() => {
-                console.log('swipe right')
-                axios({
-                  method: 'post',
-                  url: globals.api + "/person/events/save",
-                  data: 
-                  { _id: globals.userId,
-                    event: {
-                      "event-id": event._id
-                    } 
-                  }
-                })
-                .then(res => {
-                  console.log("Successfully added item")
-                })
-              }}>
-              <EventCard
-                id={event._id}
-                title={event.title}
-                date={event.date_start}
-                host={event.host}
-                image={event.image}
-              />
-            </Card>
-          ))}
-        </Cards>  
-      );
-    }
-    else {
-      return this.getEmptyResultResponse();
-    }
-  }
+	getEmptyResultResponse() {
+		return <div>No more discoveries to be made at this time :(</div>
+	}
 
-  render() {
-    if (this.state.loading) {
-      return <div className="discovery body"></div>
-    }
-    return ( 
-      <div className="discovery body">
-        <div className="eventCardContainer">
-          {this.renderEventCards()}
-        </div>
-        {/* <div className="eventCardControls">
+	renderEventCards() {
+		var events = this.state.events;
+		if (events.length > 0) {
+			return (
+				<Cards onEnd={() => (this.getEmptyResultResponse())} className="master-root">
+					{this.state.events.map((event, i) => (
+						<Card
+							key={i}
+							onSwipeLeft={() => console.log('swipe left')}
+							onSwipeRight={() => {
+								console.log('swipe right')
+								axios({
+									method: 'post',
+									url: globals.api + "/person/events/save",
+									data:
+										{
+											_id: globals.userId,
+											event: {
+												"event-id": event._id
+											}
+										}
+								})
+									.then(res => {
+										console.log("Successfully added item")
+									})
+							}}>
+							<EventCard
+								id={event._id}
+								title={event.title}
+								date={event.date_start}
+								host={event.host}
+								image={event.image}
+							/>
+						</Card>
+					))}
+				</Cards>
+			);
+		}
+		else {
+			return this.getEmptyResultResponse();
+		}
+	}
+
+	render() {
+		if (this.state.loading) {
+			return <div className="discovery body"></div>
+		}
+		return (
+			<div className="discovery body">
+				<div className="eventCardContainer">
+					{this.renderEventCards()}
+				</div>
+				{/* <div className="eventCardControls">
           <div className="button_remove">:(</div>
           <div className="button_add">{'<3'}</div>
         </div> */}
-      </div>
-    );
-  }
+			</div>
+		);
+	}
 }
 
 export default Discovery;
