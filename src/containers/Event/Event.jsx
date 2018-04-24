@@ -43,7 +43,7 @@ class Event extends Component {
     })
     .then((res) => {
       res.data.forEach((event) => {
-        if(event["event-id"] == this.props.match.params.eventId){
+        if(event["event-id"] === this.props.match.params.eventId){
           this.setState({
             grouped: true
           })
