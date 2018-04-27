@@ -15,6 +15,9 @@
 		"react"
 	],
 	"rules": {
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error",
+		"no-console":"warn",
 		"indent": [
 			"warn",
 			"tab"
@@ -22,10 +25,6 @@
 		"linebreak-style": [
 			"warn",
 			"unix"
-		],
-		"quotes": [
-			"warn",
-			"double"
 		],
 		"semi": [
 			"error",

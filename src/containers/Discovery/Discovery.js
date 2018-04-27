@@ -27,13 +27,13 @@ class Discovery extends Component {
 				this.setState({
 					loading: false,
 					events: res.data
-				})
+				});
 			})
 			.catch(err => { console.log(err); });
 	}
 
 	getEmptyResultResponse() {
-		return <div>No more discoveries to be made at this time :(</div>
+		return <div>No more discoveries to be made at this time :(</div>;
 	}
 
 	renderEventCards() {
@@ -44,9 +44,8 @@ class Discovery extends Component {
 					{this.state.events.map((event, i) => (
 						<Card
 							key={i}
-							onSwipeLeft={() => console.log('swipe left')}
+							onSwipeLeft={() => { }}
 							onSwipeRight={() => {
-								console.log('swipe right')
 								axios({
 									method: 'post',
 									url: globals.api + "/person/events/save",
@@ -59,8 +58,9 @@ class Discovery extends Component {
 										}
 								})
 									.then(res => {
-										console.log("Successfully added item")
-									})
+										console.log("Successfully added item");
+										console.log(res);
+									});
 							}}>
 							<EventCard
 								id={event._id}
@@ -81,7 +81,7 @@ class Discovery extends Component {
 
 	render() {
 		if (this.state.loading) {
-			return <div className="discovery body"></div>
+			return <div className="discovery body"></div>;
 		}
 		return (
 			<div className="discovery body">
